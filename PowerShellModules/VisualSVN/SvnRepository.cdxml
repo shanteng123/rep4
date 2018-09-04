@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+  <Class ClassName="ROOT\VisualSVN\PS_SvnRepository" ClassVersion="1.0.0.0">
+    <Version>1.0.0.0</Version>
+    <DefaultNoun>SvnRepository</DefaultNoun>
+    <InstanceCmdlets>
+      <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="Name">
+            <Type PSType="System.String" />
+            <RegularQuery AllowGlobbing="false">
+              <CmdletParameterMetadata IsMandatory="true" Position="0">
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+      </GetCmdletParameters>
+      <GetCmdlet>
+        <CmdletMetadata Verb="Get" ConfirmImpact="None"
+                        HelpUri="https://www.visualsvn.com/go/4001" />
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="false" Position="0">
+                  <ValidateNotNullOrEmpty />
+                </CmdletParameterMetadata>
+              </RegularQuery>
+            </Property>
+            <Property PropertyName="Type">
+              <Type PSType="VisualSVN.RepositoryType" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="false">
+                  <ValidateNotNull />
+                </CmdletParameterMetadata>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        </GetCmdletParameters>
+      </GetCmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Remove" ConfirmImpact="High"
+                        HelpUri="https://www.visualsvn.com/go/4002"/>
+        <Method MethodName="Remove" />
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="false">
+                <CmdletParameterMetadata IsMandatory="true" Position="0">
+                  <ValidateNotNullOrEmpty />
+                </CmdletParameterMetadata>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Get" Noun="SvnRepositoryReplication" ConfirmImpact="None"
+                        HelpUri="https://www.visualsvn.com/go/4003"/>
+        <Method MethodName="GetReplication">
+          <Parameters>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance"
+                    ETSType="Microsoft.Management.Infrastructure.CimInstance#PS_SvnRepositoryReplication" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium" Noun="SvnRepositoryReplication"
+                        HelpUri="https://www.visualsvn.com/go/4004/" />
+        <Method MethodName="SetReplication">
+          <Parameters>
+            <Parameter ParameterName="Enabled">
+              <Type PSType="System.Boolean" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="Replicators">
+              <Type PSType="System.String[]" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Test" Noun="SvnRepository" ConfirmImpact="None"
+                        Aliases="Verify-SvnRepository"
+                        HelpUri="https://www.visualsvn.com/go/4008/" />
+        <Method MethodName="Test">
+          <Parameters>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance"
+                    ETSType="Microsoft.Management.Infrastructure.CimInstance#PS_SvnRepositoryTestResult" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Rename" ConfirmImpact="High"
+                        HelpUri="https://www.visualsvn.com/go/4009/" />
+        <Method MethodName="Rename">
+          <Parameters>
+            <Parameter ParameterName="NewName">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true">
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance"
+                    ETSType="Microsoft.Management.Infrastructure.CimInstance#PS_SvnRepository" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Convert" ConfirmImpact="High"
+                        HelpUri="https://www.visualsvn.com/go/4010/"/>
+        <Method MethodName="Convert">
+          <Parameters>
+            <Parameter ParameterName="TargetType">
+              <Type PSType="VisualSVN.RepositoryType" />
+              <CmdletParameterMetadata IsMandatory="true">
+                <ValidateSet>
+                  <AllowedValue>Fsfs</AllowedValue>
+                  <AllowedValue>VdfsMaster</AllowedValue>
+                </ValidateSet>
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance"
+                    ETSType="Microsoft.Management.Infrastructure.CimInstance#PS_SvnRepository" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Sync" HelpUri="https://www.visualsvn.com/go/4011/" />
+        <Method MethodName="Sync">
+          <Parameters>
+            <Parameter ParameterName="PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance"
+                    ETSType="Microsoft.Management.Infrastructure.CimInstance#PS_SvnRepository" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Set" ConfirmImpact="Medium"
+                        HelpUri="https://www.visualsvn.com/go/4012/"/>
+        <Method MethodName="Set">
+          <Parameters>
+            <Parameter ParameterName="MasterServer">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false">
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MasterRepository">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false">
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance"
+                    ETSType="Microsoft.Management.Infrastructure.CimInstance#PS_SvnRepository" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Suspend" Noun="SvnRepository" ConfirmImpact="None"
+                        HelpUri="https://www.visualsvn.com/go/4013/"/>
+        <Method MethodName="Suspend">
+          <Parameters>
+            <Parameter ParameterName="PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance"
+                    ETSType="Microsoft.Management.Infrastructure.CimInstance#PS_SvnRepository" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Resume" Noun="SvnRepository" ConfirmImpact="None"
+                        HelpUri="https://www.visualsvn.com/go/4014/"/>
+        <Method MethodName="Resume">
+          <Parameters>
+            <Parameter ParameterName="PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance"
+                    ETSType="Microsoft.Management.Infrastructure.CimInstance#PS_SvnRepository" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Switch" Noun="SvnRepository" ConfirmImpact="High"
+                        HelpUri="https://www.visualsvn.com/go/4015/"/>
+        <Method MethodName="Switch">
+          <Parameters>
+            <Parameter ParameterName="Role">
+              <Type PSType="VisualSVN.RepositoryRole" />
+              <CmdletParameterMetadata IsMandatory="true">
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MasterServer">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false">
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MasterRepository">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false">
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="PassThru">
+              <Type PSType="System.Management.Automation.SwitchParameter" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance"
+                    ETSType="Microsoft.Management.Infrastructure.CimInstance#PS_SvnRepository" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Measure" Noun="SvnRepository" ConfirmImpact="None"
+                        HelpUri="https://www.visualsvn.com/go/4016/"/>
+        <Method MethodName="Measure">
+          <Parameters>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance"
+                    ETSType="Microsoft.Management.Infrastructure.CimInstance#PS_SvnRepositoryStats" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+          <QueryableProperties>
+            <Property PropertyName="Name">
+              <Type PSType="System.String" />
+              <RegularQuery AllowGlobbing="true">
+                <CmdletParameterMetadata IsMandatory="false" Position="0">
+                  <ValidateNotNullOrEmpty />
+                </CmdletParameterMetadata>
+              </RegularQuery>
+            </Property>
+          </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+    <StaticCmdlets>
+      <Cmdlet>
+        <CmdletMetadata Verb="New" ConfirmImpact="None"
+                        HelpUri="https://www.visualsvn.com/go/4017/"/>
+        <Method MethodName="Create">
+          <Parameters>
+            <Parameter ParameterName="Name">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Position="0" ValueFromPipeline="true" ValueFromPipelineByPropertyName="true">
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="Type" DefaultValue="Fsfs">
+              <Type PSType="VisualSVN.RepositoryType" />
+              <CmdletParameterMetadata>
+                <ValidateNotNull />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MasterServer">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false">
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="MasterRepository">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false" ValueFromPipelineByPropertyName="true">
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance"
+                    ETSType="Microsoft.Management.Infrastructure.CimInstance#PS_SvnRepository" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+      <Cmdlet>
+        <CmdletMetadata Verb="Import" ConfirmImpact="None"
+                        HelpUri="https://www.visualsvn.com/go/4018/"/>
+        <Method MethodName="Import">
+          <Parameters>
+            <Parameter ParameterName="Path">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="true" Position="0"
+                                       ValueFromPipeline="true"
+                                       ValueFromPipelineByPropertyName="true">
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="DestinationName">
+              <Type PSType="System.String" />
+              <CmdletParameterMetadata IsMandatory="false" >
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance"
+                    ETSType="Microsoft.Management.Infrastructure.CimInstance#PS_SvnRepository" />
+              <CmdletOutputMetadata />
+            </Parameter>
+          </Parameters>
+        </Method>
+      </Cmdlet>
+    </StaticCmdlets>
+    <CmdletAdapterPrivateData>
+      <Data Name="ClientSideShouldProcess" />
+      <Data Name="ClientSideWriteVerbose" />
+      <Data Name="DefaultThrottleLimit">1</Data>
+    </CmdletAdapterPrivateData>
+  </Class>
+  <Enums>
+    <Enum EnumName="VisualSVN.RepositoryType" UnderlyingType="uint32">
+      <Value Name="Fsfs" Value="0" />
+      <Value Name="VdfsMaster" Value="1" />
+      <Value Name="VdfsSlave" Value="2" />
+    </Enum>
+    <Enum EnumName="VisualSVN.RepositoryTestSummary" UnderlyingType="uint32">
+      <Value Name="OK" Value="0" />
+      <Value Name="Error" Value="1" />
+    </Enum>
+    <Enum EnumName="VisualSVN.RepositoryStatus" UnderlyingType="uint32">
+      <Value Name="Normal" Value="0" />
+      <Value Name="Suspended" Value="1" />
+    </Enum>
+    <Enum EnumName="VisualSVN.RepositoryRole" UnderlyingType="uint32">
+      <Value Name="Master" Value="0" />
+      <Value Name="Slave" Value="1" />
+    </Enum>
+  </Enums>
+</PowerShellMetadata>
+
+<!-- SIG # Begin signature block -->
+<!-- MIIWgwYJKoZIhvcNAQcCoIIWdDCCFnACAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB -->
+<!-- gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR -->
+<!-- AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUT6R+zvVJ2ZPLZjmqVW36RXdj -->
+<!-- nFCgghGwMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B -->
+<!-- AQUFADCBizELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTEUMBIG -->
+<!-- A1UEBxMLRHVyYmFudmlsbGUxDzANBgNVBAoTBlRoYXd0ZTEdMBsGA1UECxMUVGhh -->
+<!-- d3RlIENlcnRpZmljYXRpb24xHzAdBgNVBAMTFlRoYXd0ZSBUaW1lc3RhbXBpbmcg -->
+<!-- Q0EwHhcNMTIxMjIxMDAwMDAwWhcNMjAxMjMwMjM1OTU5WjBeMQswCQYDVQQGEwJV -->
+<!-- UzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xMDAuBgNVBAMTJ1N5bWFu -->
+<!-- dGVjIFRpbWUgU3RhbXBpbmcgU2VydmljZXMgQ0EgLSBHMjCCASIwDQYJKoZIhvcN -->
+<!-- AQEBBQADggEPADCCAQoCggEBALGss0lUS5ccEgrYJXmRIlcqb9y4JsRDc2vCvy5Q -->
+<!-- WvsUwnaOQwElQ7Sh4kX06Ld7w3TMIte0lAAC903tv7S3RCRrzV9FO9FEzkMScxeC -->
+<!-- i2m0K8uZHqxyGyZNcR+xMd37UWECU6aq9UksBXhFpS+JzueZ5/6M4lc/PcaS3Er4 -->
+<!-- ezPkeQr78HWIQZz/xQNRmarXbJ+TaYdlKYOFwmAUxMjJOxTawIHwHw103pIiq8r3 -->
+<!-- +3R8J+b3Sht/p8OeLa6K6qbmqicWfWH3mHERvOJQoUvlXfrlDqcsn6plINPYlujI -->
+<!-- fKVOSET/GeJEB5IL12iEgF1qeGRFzWBGflTBE3zFefHJwXECAwEAAaOB+jCB9zAd -->
+<!-- BgNVHQ4EFgQUX5r1blzMzHSa1N197z/b7EyALt0wMgYIKwYBBQUHAQEEJjAkMCIG -->
+<!-- CCsGAQUFBzABhhZodHRwOi8vb2NzcC50aGF3dGUuY29tMBIGA1UdEwEB/wQIMAYB -->
+<!-- Af8CAQAwPwYDVR0fBDgwNjA0oDKgMIYuaHR0cDovL2NybC50aGF3dGUuY29tL1Ro -->
+<!-- YXd0ZVRpbWVzdGFtcGluZ0NBLmNybDATBgNVHSUEDDAKBggrBgEFBQcDCDAOBgNV -->
+<!-- HQ8BAf8EBAMCAQYwKAYDVR0RBCEwH6QdMBsxGTAXBgNVBAMTEFRpbWVTdGFtcC0y -->
+<!-- MDQ4LTEwDQYJKoZIhvcNAQEFBQADgYEAAwmbj3nvf1kwqu9otfrjCR27T4IGXTdf -->
+<!-- plKfFo3qHJIJRG71betYfDDo+WmNI3MLEm9Hqa45EfgqsZuwGsOO61mWAK3ODE2y -->
+<!-- 0DGmCFwqevzieh1XTKhlGOl5QGIllm7HxzdqgyEIjkHq3dlXPx13SYcqFgZepjhq -->
+<!-- IhKjURmDfrYwggQpMIIDEaADAgECAgsEAAAAAAExicY36DANBgkqhkiG9w0BAQsF -->
+<!-- ADBMMSAwHgYDVQQLExdHbG9iYWxTaWduIFJvb3QgQ0EgLSBSMzETMBEGA1UEChMK -->
+<!-- R2xvYmFsU2lnbjETMBEGA1UEAxMKR2xvYmFsU2lnbjAeFw0xMTA4MDIxMDAwMDBa -->
+<!-- Fw0xOTA4MDIxMDAwMDBaMFoxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxT -->
+<!-- aWduIG52LXNhMTAwLgYDVQQDEydHbG9iYWxTaWduIENvZGVTaWduaW5nIENBIC0g -->
+<!-- U0hBMjU2IC0gRzIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCj79Gf -->
+<!-- KenY04J2PGKg0knWFh7xz/DQukhDAy2nHfIBNEmkEOliE/QT9BaDtdVXQkiGK5VY -->
+<!-- h+ooBHTLchEPYSbh+hxhFccom00Lgg8mK5A6lu2k0GspnPVhiOakV2/u9HDQjRfe -->
+<!-- 5mZ2X3QeXgxTOF2Q9N8wLRsT0XmYVBpLOAT0B8QjA9OSy/eAXaqcVgZELUFMSLQt -->
+<!-- 7DWSmsaV1/XOkDHidrNhuPF1V0KsO84ryJBJ6Lcmz7sMicvQw6NqocnV45xTK1cm -->
+<!-- /laadv1hRqJg7ClGR/LN4IJixgRa5+1OQFxIBn2dX+d0yZ6EZQ1b3tzTJBy0FBHr -->
+<!-- q7/EH6S6mdAXWDXNAgMBAAGjgf0wgfowDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB -->
+<!-- /wQIMAYBAf8CAQAwHQYDVR0OBBYEFBlKuFrkTTGlFOVe7C+jHPqAjDJrMEcGA1Ud -->
+<!-- IARAMD4wPAYEVR0gADA0MDIGCCsGAQUFBwIBFiZodHRwczovL3d3dy5nbG9iYWxz -->
+<!-- aWduLmNvbS9yZXBvc2l0b3J5LzA2BgNVHR8ELzAtMCugKaAnhiVodHRwOi8vY3Js -->
+<!-- Lmdsb2JhbHNpZ24ubmV0L3Jvb3QtcjMuY3JsMBMGA1UdJQQMMAoGCCsGAQUFBwMD -->
+<!-- MB8GA1UdIwQYMBaAFI/wS3+oLkUkrk1Q+mOai97i3Ru8MA0GCSqGSIb3DQEBCwUA -->
+<!-- A4IBAQB5sGk04gWH9v7UYCwvhnk0A+CxB5MMhFz55Nxsz2617ApcugvQaDEuP2S9 -->
+<!-- D4JrZneBf8YppRfY8IlNgyQR9m7+neFICiig4nskgKTswpoA17BtbM2I1RV4zxP5 -->
+<!-- iKVzTcE2K9zLztt+fNKL7y+9s09NOq27Ym4ok8QMy9nmyuARApQDsL0/lChWkB5T -->
+<!-- wifVyTzNGmMeglkVtkDKp4Gqw1WvM9G1degJ6kcISCL7XRvzLHppfsXXWl5WMzyt -->
+<!-- V+iTJULD0l5xO0ocVO2pVawoBcfEbF3cPJP2aTyCUc4aFT1eAXP/QKLqtK7Tjvru -->
+<!-- XWxHx0H11FZX8hg3MtbUzEv2ceB2MIIEozCCA4ugAwIBAgIQDs/0OMj+vzVuBNhq -->
+<!-- mBsaUDANBgkqhkiG9w0BAQUFADBeMQswCQYDVQQGEwJVUzEdMBsGA1UEChMUU3lt -->
+<!-- YW50ZWMgQ29ycG9yYXRpb24xMDAuBgNVBAMTJ1N5bWFudGVjIFRpbWUgU3RhbXBp -->
+<!-- bmcgU2VydmljZXMgQ0EgLSBHMjAeFw0xMjEwMTgwMDAwMDBaFw0yMDEyMjkyMzU5 -->
+<!-- NTlaMGIxCzAJBgNVBAYTAlVTMR0wGwYDVQQKExRTeW1hbnRlYyBDb3Jwb3JhdGlv -->
+<!-- bjE0MDIGA1UEAxMrU3ltYW50ZWMgVGltZSBTdGFtcGluZyBTZXJ2aWNlcyBTaWdu -->
+<!-- ZXIgLSBHNDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKJjCzlEuLsj -->
+<!-- p0RJuw7/ofBhClOTsJjbrSwPSsVu/4Y8U1UPFc4EPyv9qZaW2b5heQtbyUyGduXg -->
+<!-- Q0sile7CK0PBn9hotI5AT+6FOLkRxSPyZFjwFTJvTlehroikAtcqHs1L4d1j1ReJ -->
+<!-- MluwXplaqJ0oUA4X7pbbYTtFUR3PElYLkkf8q672Zj1HrHBy55LnX80QucSDZJQZ -->
+<!-- vSWA4ejSIqXQugJ6oXeTW2XD7hd0vEGGKtwITIySjJEtnndEH2jWqHR32w5bMotW -->
+<!-- izO92WPISZ06xcXqMwvS8aMb9Iu+2bNXizveBKd6IrIkri7HcMW+ToMmCPsLvalP -->
+<!-- mQjhEChyqs0CAwEAAaOCAVcwggFTMAwGA1UdEwEB/wQCMAAwFgYDVR0lAQH/BAww -->
+<!-- CgYIKwYBBQUHAwgwDgYDVR0PAQH/BAQDAgeAMHMGCCsGAQUFBwEBBGcwZTAqBggr -->
+<!-- BgEFBQcwAYYeaHR0cDovL3RzLW9jc3Aud3Muc3ltYW50ZWMuY29tMDcGCCsGAQUF -->
+<!-- BzAChitodHRwOi8vdHMtYWlhLndzLnN5bWFudGVjLmNvbS90c3MtY2EtZzIuY2Vy -->
+<!-- MDwGA1UdHwQ1MDMwMaAvoC2GK2h0dHA6Ly90cy1jcmwud3Muc3ltYW50ZWMuY29t -->
+<!-- L3Rzcy1jYS1nMi5jcmwwKAYDVR0RBCEwH6QdMBsxGTAXBgNVBAMTEFRpbWVTdGFt -->
+<!-- cC0yMDQ4LTIwHQYDVR0OBBYEFEbGaaMOShQe1UzaUmMXP142vA3mMB8GA1UdIwQY -->
+<!-- MBaAFF+a9W5czMx0mtTdfe8/2+xMgC7dMA0GCSqGSIb3DQEBBQUAA4IBAQB4O7SR -->
+<!-- KgBM8I9iMDd4o4QnB28Yst4l3KDUlAOqhk4ln5pAAxzdzuN5yyFoBtq2MrRtv/Qs -->
+<!-- JmMz5ElkbQ3mw2cO9wWkNWx8iRbG6bLfsundIMZxD82VdNy2XN69Nx9DeOZ4tc0o -->
+<!-- BCCjqvFLxIgpkQ6A0RH83Vx2bk9eDkVGQW4NsOo4mrE62glxEPwcebSAe6xp9P2c -->
+<!-- tgwWK/F/Wwk9m1viFsoTgW0ALjgNqCmPLOGy9FqpAa8VnCwvSRvbIrvD/niUUcOG -->
+<!-- sYKIXfA9tFGheTMrLnu53CAJE3Hrahlbz+ilMFcsiUk/uc9/yb8+ImhjU5q9aXSs -->
+<!-- xR08f5Lgw7wc2AR1MIIE5jCCA86gAwIBAgISESG6mgNBGSsKg3MpJkxVIAPVMA0G -->
+<!-- CSqGSIb3DQEBCwUAMFoxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWdu -->
+<!-- IG52LXNhMTAwLgYDVQQDEydHbG9iYWxTaWduIENvZGVTaWduaW5nIENBIC0gU0hB -->
+<!-- MjU2IC0gRzIwHhcNMTQwNTEzMTI0MzIwWhcNMTcwNTEzMTI0MzIwWjBlMQswCQYD -->
+<!-- VQQGEwJWRzEQMA4GA1UECBMHVG9ydG9sYTESMBAGA1UEBxMJUm9hZCBUb3duMRcw -->
+<!-- FQYDVQQKEw5WaXN1YWxTVk4gTHRkLjEXMBUGA1UEAxMOVmlzdWFsU1ZOIEx0ZC4w -->
+<!-- ggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDRWR7FaO3ASBqba+1qfOeS -->
+<!-- G7vNCKveIr1mIMccRwXdVs/aKbw6I9leO+4n/rdfwuSPylVLTRdmEW9NyTxnYFnV -->
+<!-- L4iPc22SskH23yb15Os7grQMfZZB88ujbarCPiqfTkm6+eiRfVQtBRsZYlxuUqo/ -->
+<!-- oiHm0AsatFa++z6XIuCOz+vCnDFdI8b5aeGF40ELt0rO6xfZtr2HXN+WDLzUdFKB -->
+<!-- 0f84Tnmb8YHETGvPM82wFblEQTgVqTwC5imOkkqgOuIgahsF3NrlyDa2Vgf5uzvg -->
+<!-- V+28sN10Zw5YisFNV2JuBj1Faya0Rc5NQWlOScNJFe+T10xVhwKU54t4Dvv8Ib8p -->
+<!-- AgMBAAGjggGZMIIBlTAOBgNVHQ8BAf8EBAMCB4AwTAYDVR0gBEUwQzBBBgkrBgEE -->
+<!-- AaAyATIwNDAyBggrBgEFBQcCARYmaHR0cHM6Ly93d3cuZ2xvYmFsc2lnbi5jb20v -->
+<!-- cmVwb3NpdG9yeS8wCQYDVR0TBAIwADATBgNVHSUEDDAKBggrBgEFBQcDAzBCBgNV -->
+<!-- HR8EOzA5MDegNaAzhjFodHRwOi8vY3JsLmdsb2JhbHNpZ24uY29tL2dzL2dzY29k -->
+<!-- ZXNpZ25zaGEyZzIuY3JsMIGQBggrBgEFBQcBAQSBgzCBgDBEBggrBgEFBQcwAoY4 -->
+<!-- aHR0cDovL3NlY3VyZS5nbG9iYWxzaWduLmNvbS9jYWNlcnQvZ3Njb2Rlc2lnbnNo -->
+<!-- YTJnMi5jcnQwOAYIKwYBBQUHMAGGLGh0dHA6Ly9vY3NwMi5nbG9iYWxzaWduLmNv -->
+<!-- bS9nc2NvZGVzaWduc2hhMmcyMB0GA1UdDgQWBBRUeQ10oXTVXjL6G033OdEKPPnq -->
+<!-- fTAfBgNVHSMEGDAWgBQZSrha5E0xpRTlXuwvoxz6gIwyazANBgkqhkiG9w0BAQsF -->
+<!-- AAOCAQEAC3Lu7FYxFiRQzTI2swuvXB849hMFsGtpJgUz25Xy+yPDInK/A3byNL8J -->
+<!-- uKnOTaMWzgnJ5G3NZMq9Bra0+WTSQpzgU34wC+rLsGo1ypMUjf4rYqWVLY8DNZUV -->
+<!-- kv1YBoDVZ2NhtieQyAcXR3UMOnI+RFv4PJw4xcZTuyMJTd4h6iIL3w8fMvkpx20v -->
+<!-- 3cZY80x9rTnSrTYZynl8J7z9aeueeUf00itFtkboRHgRNiez7dYWblhSIT0Pqk2Z -->
+<!-- flS4JpMGpuFsGLX40L2XO8L+8c6WVpg2CX2gEsjvvWCD7DrQCTeWeNihMx1uh98N -->
+<!-- 2AG1lnt78HJVXyuESzZy2+qydujMAzGCBD0wggQ5AgEBMHAwWjELMAkGA1UEBhMC -->
+<!-- QkUxGTAXBgNVBAoTEEdsb2JhbFNpZ24gbnYtc2ExMDAuBgNVBAMTJ0dsb2JhbFNp -->
+<!-- Z24gQ29kZVNpZ25pbmcgQ0EgLSBTSEEyNTYgLSBHMgISESG6mgNBGSsKg3MpJkxV -->
+<!-- IAPVMAkGBSsOAwIaBQCggZQwGQYJKoZIhvcNAQkDMQwGCisGAQQBgjcCAQQwHAYK -->
+<!-- KwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkEMRYEFJ4uscqs -->
+<!-- ofuHMciAWIYMjFxzgylDMDQGCisGAQQBgjcCAQwxJjAkoCKAIABWAGkAcwB1AGEA -->
+<!-- bABTAFYATgAgAFMAZQByAHYAZQByMA0GCSqGSIb3DQEBAQUABIIBAGRK8zTryg8u -->
+<!-- LqL8ODPPE/NNnBIF1jqTDwqTRieeBveoqywFuficI20yubnwVhnq4pWtaMPvgcOz -->
+<!-- JA36L5Fmct+wXBYvdwi8FVJBcWByx52BFiof8/4IP6ovSs9IxvePj8uRCgMhZyCB -->
+<!-- gV6PiD+KN8UDpTDqUUUqyuyYKzpTez0tjGHrcM7xoxTiB3vMzf+ohe2sal6CvRB0 -->
+<!-- VXWd9W4Js5qS/pTpn9/zkCd7mJWTz4DrOl4ujxqMJ7fC86jR86lHHerENDqfgw3n -->
+<!-- b/M1tBjJ4k+7liK3mCUCSZ/B2Ba5XYjzKAFDHB6APgKWTeqmCRvUBq6W7bEhJe/J -->
+<!-- sEfe2e/9hnShggILMIICBwYJKoZIhvcNAQkGMYIB+DCCAfQCAQEwcjBeMQswCQYD -->
+<!-- VQQGEwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xMDAuBgNVBAMT -->
+<!-- J1N5bWFudGVjIFRpbWUgU3RhbXBpbmcgU2VydmljZXMgQ0EgLSBHMgIQDs/0OMj+ -->
+<!-- vzVuBNhqmBsaUDAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEH -->
+<!-- ATAcBgkqhkiG9w0BCQUxDxcNMTYwOTI3MTAyNTM5WjAjBgkqhkiG9w0BCQQxFgQU -->
+<!-- sljLRhzS7Na721wutovC74kmhxEwDQYJKoZIhvcNAQEBBQAEggEAcrZ25UwopzPm -->
+<!-- DzIR1959MDsZkp8QdbBAaCJJsD4VL9R5pMVywiIPXOZyi6/Oy4rz9tKMwaLL7NqF -->
+<!-- j0lxguK5jMfL4uRzot3mc1hYlEVkdaX1my8Ql+pwXJ6OBckf0TvokY8ZeE8y8FhG -->
+<!-- nXMHTceh/EV14GsUg7FEhTa5DdyfXunnWO+MCD+7q/K80tKW+ythKeMV3WeRuSYX -->
+<!-- yBz8YzHRwcumkxsZWKeLFTHzE6qGw8BvM+PltC8hGpHrzNVvE1foyaB5YU9MxOTS -->
+<!-- AdujrLjqeyrdKJLMjfJgf7/uDTByU+1TA80691UQJBCdjEsl6YNgFt+zqW8RmW54 -->
+<!-- ECxgglmd/A== -->
+<!-- SIG # End signature block -->

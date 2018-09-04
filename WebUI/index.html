@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/hljs-vs.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css?v=4">
+  <noscript>
+    <style>
+       #loading { display: none; }
+    </style>
+  </noscript>
+  <script>
+    if (!document.addEventListener || 
+        isNaN(Date.parse("2000-01-01T00:00:00.1230Z"))) {
+        window.onload = function() {
+            document.getElementById("loading").style.display = "none";
+
+            var banner = document.getElementById("errors-banner");
+            banner.innerHTML =
+                "You are using an old browser and some features may not " +
+                "work correctly. Please upgrade to a " +
+                "<a href='http://www.visualsvn.com/go/2081/'>supported browser</a>.";
+            banner.style.display = "block";
+        };
+    }
+  </script>
+  <script src="assets/scripts/jquery-2.1.4.js"></script>
+  <script src="assets/scripts/handlebars-v1.3.0.js"></script>
+  <script src="assets/scripts/highlight.pack.js"></script>
+  <script src="assets/scripts/diff.js"></script>
+  <script src="assets/scripts/marked.min.js"></script>
+  <script src="assets/scripts/mousetrap.js"></script>
+  <script type="text/javascript" src="assets/scripts/main.js?v=4"></script>
+  <title>VisualSVN Server</title>
+</head>
+<body>
+  <header id="header"><a href="#"><img id="logo" src="assets/img/logo.png?v=1" alt="VisualSVN Server" /></a></header>
+  <div id="loading">Loading...</div>
+  <div id="errors-popup"></div>
+  <div id="content">
+  <noscript>
+    <div id="no-script-msg">
+      <h2>JavaScript is disabled in your browser</h2>
+      <p>
+        Subversion Web Interface is not available because JavaScript is either 
+        disabled or not supported in your browser. Ask system administrator to
+        enable JavaScript in your browser and reload the page.
+      </p>
+    </div>
+  </noscript>
+    <div id="errors-banner"></div>
+  </div>
+  <footer>
+  Powered by <a href="http://www.visualsvn.com/server/">VisualSVN Server</a>. &copy; 2005-2016 VisualSVN Limited.
+  </footer>
+  <script>startSvnWebClient("/svn/")</script>
+</body>
+</html>
